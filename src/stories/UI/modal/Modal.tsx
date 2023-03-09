@@ -8,6 +8,7 @@ import { Fade } from "../animations/fade/Fade";
 import { useMountTransition } from "@/hooks/useMountTransition";
 
 const transitionMs = 150;
+console.log("for empty commit");
 
 const styles = {
   overlay: css`
