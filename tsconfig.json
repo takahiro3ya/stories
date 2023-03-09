@@ -16,8 +16,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    "baseUrl": ".", // 追加
-    "paths": { "@/*": ["./src/*"] } // 追加
+    "baseUrl": ".", // add
+    "paths": { "@/*": ["./src/*"], "~/*": ["public/*"] } // add
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
