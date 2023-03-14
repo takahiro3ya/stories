@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 
 // import reactLogo from "./assets/react.svg";
 import "./App.css";
@@ -6,10 +6,12 @@ import { Modal } from "./stories/UI/modal/Modal";
 
 function App() {
   // const [count, setCount] = useState(0);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="App">
-      <Modal>
+      <button onClick={() => setOpen(true)}>モーダルを開く</button>
+      <Modal open={open} setOpen={setOpen}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in

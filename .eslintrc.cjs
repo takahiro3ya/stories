@@ -10,9 +10,11 @@
  * https://zenn.dev/riemonyamada/articles/02e8c172e1eeb1
  *
  * Prettier
+ * https://prettier.io/docs/en/index.html // 公式
  * https://meetup-jp.toast.com/3602
  *
  * husky
+ * https://typicode.github.io/husky/#/ // 公式
  * https://fwywd.com/tech/husky-setup
  */
 
