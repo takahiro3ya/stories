@@ -1,15 +1,39 @@
 import { useState } from "react";
 
-// import reactLogo from "./assets/react.svg";
-import "./App.css";
+import { Global, css } from "@emotion/react";
+
 import { Modal } from "./stories/UI/modal/Modal";
+import "sanitize.css";
+import "sanitize.css/forms.css";
+import "sanitize.css/typography.css";
+
+const globalStyles = css`
+  body {
+    color: #1b1b1b;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo,
+      sans-serif;
+    /* 和文フォント適用確認サンプル */
+    /* font-family: YuGothic, sans-serif; */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      margin: 0;
+    }
+  }
+`;
 
 function App() {
-  // const [count, setCount] = useState(0);
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="App">
+    <>
+      <Global styles={globalStyles} />
+
       <button onClick={() => setOpen(true)}>モーダルを開く</button>
       <Modal open={open} setOpen={setOpen}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -18,28 +42,7 @@ function App() {
         voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
         cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </Modal>
-
-      {/* <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
-    </div>
+    </>
   );
 }
 

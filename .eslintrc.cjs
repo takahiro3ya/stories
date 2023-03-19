@@ -1,23 +1,3 @@
-/**
- * 【参考にしたページ】
- * 作成者のみなさんに感謝
- *
- * ESLint と Prettier を導入
- * https://chaika.hatenablog.com/entry/2022/05/15/150000
- * https://zenn.dev/longbridge/articles/ae3aa36cf17d73
- *
- * ESlint で import を自動ソート
- * https://zenn.dev/riemonyamada/articles/02e8c172e1eeb1
- *
- * Prettier
- * https://prettier.io/docs/en/index.html // 公式
- * https://meetup-jp.toast.com/3602
- *
- * husky
- * https://typicode.github.io/husky/#/ // 公式
- * https://fwywd.com/tech/husky-setup
- */
-
 module.exports = {
   env: {
     browser: true,
