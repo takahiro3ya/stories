@@ -10,7 +10,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint": "eslint --ext .jsx,.js,.tsx,.ts src/",
-    "lintfix": "yarn lint --fix",
+    "lintfix": "npm run lint --fix",
     "format": "prettier --write \"**/*.+(js|json|yml|ts|tsx)\"",
     "prepare": "husky install"
   },
