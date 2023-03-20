@@ -39,21 +39,21 @@ A collection of recipes for React components using Storybook.
 `Thank you so much to all the creators and developers!`
 
 ESLint and Prettier
-https://chaika.hatenablog.com/entry/2022/05/15/150000
-https://zenn.dev/longbridge/articles/ae3aa36cf17d73
+- [Vite + React (TypeScript) のプロジェクトに ESLint と Prettier を導入する。](https://chaika.hatenablog.com/entry/2022/05/15/150000)
+- [Viteで作成したReact（TypeScript）プロジェクトにEsLintとPrettierを導入する（2022/02）](https://zenn.dev/longbridge/articles/ae3aa36cf17d73)
 
 ESlint import sort
-https://zenn.dev/riemonyamada/articles/02e8c172e1eeb1
+- [ESlint で import を自動ソートする](https://zenn.dev/riemonyamada/articles/02e8c172e1eeb1)
 
 Prettier
-https://prettier.io/docs/en/index.html
-https://meetup-jp.toast.com/3602
+- [Prettier - What is Prettier?](https://prettier.io/docs/en/index.html)
+- [Prettier 2.0で変更されたオプションについて](https://meetup-jp.toast.com/3602)
 
 husky
-https://typicode.github.io/husky/#/
-https://fwywd.com/tech/husky-setup
+- [husky](https://typicode.github.io/husky/#/)
+- [husky v6 のインストール方法と使い方。lint-staged も導入して、品質を保とう](https://fwywd.com/tech/husky-setup)
 
 sanitize.css
-https://github.com/csstools/sanitize.css#readme
-https://zenn.dev/longbridge/articles/e2150329bad160
-https://emotion.sh/docs/globals
+- [sanitize.css - README.md](https://github.com/csstools/sanitize.css#readme)
+- [Vite+React+Emotionに、リセットCSSを導入する。](https://zenn.dev/longbridge/articles/e2150329bad160)
+- [Emotion - Global Styles](https://emotion.sh/docs/globals)
