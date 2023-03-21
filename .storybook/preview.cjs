@@ -1,3 +1,21 @@
+import React from "react";
+import { withThemeFromJSXProvider } from "@storybook/addon-styling";
+import { Global } from "@emotion/react";
+
+import { globalStyles } from "../src/App";
+
+const GlobalStyles = () => {
+  return React.createElement(Global, {
+    styles: globalStyles,
+  });
+};
+
+export const decorators = [
+  withThemeFromJSXProvider({
+    GlobalStyles, // Adds your GlobalStyles component to all stories
+  }),
+];
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {

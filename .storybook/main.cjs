@@ -1,8 +1,3 @@
-/**
- * tsconfig absolute paths setting
- * https://github.com/storybookjs/storybook/issues/18891
- */
-
 const viteTsconfig = require("vite-tsconfig-paths"); // add
 const tsconfigPaths = viteTsconfig.default; // add
 
@@ -14,6 +9,7 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@storybook/addon-styling",
   ],
   framework: "@storybook/react",
   core: {
@@ -23,6 +19,10 @@ module.exports = {
     storyStoreV7: true,
   },
 
+  /**
+   * tsconfig absolute paths setting
+   * https://github.com/storybookjs/storybook/issues/18891
+   */
   // add
   async viteFinal(config) {
     return mergeConfig(config, {

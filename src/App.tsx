@@ -7,26 +7,6 @@ import "sanitize.css";
 import "sanitize.css/forms.css";
 import "sanitize.css/typography.css";
 
-const globalStyles = css`
-  body {
-    color: #1b1b1b;
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo,
-      sans-serif;
-    /* 和文フォント適用確認サンプル */
-    /* font-family: YuGothic, sans-serif; */
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p {
-      margin: 0;
-    }
-  }
-`;
-
 function App() {
   const [open, setOpen] = useState(false);
 
@@ -45,5 +25,28 @@ function App() {
     </>
   );
 }
+
+export const globalStyles = css`
+  body {
+    color: #2e3438;
+    font-size: 16px;
+    /* 2022年に最適なfont-familyの書き方 */
+    /* https://ics.media/entry/200317/ */
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo,
+      sans-serif;
+    /* sample for JP font */
+    /* font-family: YuMincho, YuGothic, sans-serif; */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      margin: 0;
+    }
+  }
+`;
 
 export default App;
