@@ -17,9 +17,6 @@ const Template: ComponentStory<typeof Modal> = (args) => {
 
   return (
     <>
-      <p>Lorem ipsum dolor sit amet</p>
-      <p>今日の天気は晴れ。降水確率は10%。明日も晴れるといいな。週末も晴れるといいな。</p>
-
       <button onClick={handleOpen}>モーダルを開く</button>
       <Modal {...args} open={open} setOpen={setOpen}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut

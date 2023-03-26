@@ -3,15 +3,16 @@ import { FC } from "react";
 
 import { css } from "@emotion/react";
 
+import { TRANSITION_MS } from "@/constants/commons";
 import { useMountTransition } from "@/hooks/useMountTransition";
 
 type Props = {
   children: React.ReactNode;
   open: boolean;
-  transitionMs: number;
+  transitionMs?: number;
 };
 
-export const Fade: FC<Props> = ({ children, open, transitionMs }) => {
+export const Fade: FC<Props> = ({ children, open, transitionMs = TRANSITION_MS }) => {
   const { hasTransitionedIn } = useMountTransition(open, transitionMs);
 
   return (

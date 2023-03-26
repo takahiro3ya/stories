@@ -4,12 +4,14 @@
  */
 import { useEffect, useState } from "react";
 
+import { TRANSITION_MS } from "@/constants/commons";
+
 /**
  * Usage in component
  * target component display: isMounted || hasTransitionedIn
  * target component active style: isMounted && hasTransitionedIn
  */
-export const useMountTransition = (isMounted: boolean, unmountDelay: number) => {
+export const useMountTransition = (isMounted: boolean, unmountDelay: number = TRANSITION_MS) => {
   const [hasTransitionedIn, setHasTransitionedIn] = useState(false);
 
   useEffect(() => {

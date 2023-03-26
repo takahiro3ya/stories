@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Global, css } from "@emotion/react";
 
 import { Modal } from "./stories/UI/modal/Modal";
+
+import { COLORS } from "@/constants/colors";
 import "sanitize.css";
 import "sanitize.css/forms.css";
 import "sanitize.css/typography.css";
@@ -13,6 +15,10 @@ function App() {
   return (
     <>
       <Global styles={globalStyles} />
+
+      <h1>テストヘッドライン</h1>
+      <div>div 今日の天気は晴れ。降水確率は10%。明日も晴れるといいな。週末も晴れるといいな。</div>
+      <p>p 今日の天気は晴れ。降水確率は10%。明日も晴れるといいな。週末も晴れるといいな。</p>
 
       <button onClick={() => setOpen(true)}>モーダルを開く</button>
       <Modal open={open} setOpen={setOpen}>
@@ -28,7 +34,8 @@ function App() {
 
 export const globalStyles = css`
   body {
-    color: #2e3438;
+    background-color: ${COLORS.background};
+    color: ${COLORS.paragraph};
     font-size: 16px;
     /* 2022年に最適なfont-familyの書き方 */
     /* https://ics.media/entry/200317/ */
@@ -42,9 +49,18 @@ export const globalStyles = css`
     h3,
     h4,
     h5,
-    h6,
+    h6 {
+      margin: 0;
+      color: ${COLORS.headline};
+    }
+
     p {
       margin: 0;
+      color: ${COLORS.paragraph};
+    }
+
+    button {
+      cursor: pointer;
     }
   }
 `;

@@ -7,8 +7,6 @@ import { Fade } from "../animations/fade/Fade";
 
 import { useMountTransition } from "@/hooks/useMountTransition";
 
-const transitionMs = 150;
-
 type Props = {
   children: React.ReactNode;
   open: boolean;
@@ -20,7 +18,7 @@ type Props = {
 };
 
 export const Modal: FC<Props> = ({ children, open, setOpen, maxWidth }) => {
-  const { hasTransitionedIn } = useMountTransition(open, transitionMs);
+  const { hasTransitionedIn } = useMountTransition(open);
 
   const handleClose = () => {
     setOpen(false);
@@ -33,7 +31,7 @@ export const Modal: FC<Props> = ({ children, open, setOpen, maxWidth }) => {
   return (
     <>
       {(open || hasTransitionedIn) && (
-        <Fade open={open} transitionMs={transitionMs}>
+        <Fade open={open}>
           <div css={styles.overlay} onClick={handleClose}>
             <div css={styles.modal(maxWidth)} onClick={handleContentClick}>
               {children}
