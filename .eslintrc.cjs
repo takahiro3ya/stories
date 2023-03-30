@@ -24,7 +24,7 @@ module.exports = {
   ],
   rules: {
     "react/react-in-jsx-scope": "off", // add
-    "react/display-name": "off", // add
+    // "react/display-name": "off", // add
     "@typescript-eslint/no-unused-vars": "off", // add
     "unused-imports/no-unused-imports": "error", // add
     "react/no-unknown-property": ["error", { ignore: ["css"] }], // add - for emotion
