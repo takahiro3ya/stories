@@ -4,7 +4,7 @@
  */
 import { useEffect, useState } from "react";
 
-import { TRANSITION_MS } from "@/constants/commons";
+import { TRANSITION_MS } from "@/constants/values";
 
 /**
  * Usage in component

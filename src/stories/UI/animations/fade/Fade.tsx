@@ -3,7 +3,7 @@ import { FC } from "react";
 
 import { css } from "@emotion/react";
 
-import { TRANSITION_MS } from "@/constants/commons";
+import { TRANSITION_MS } from "@/constants/values";
 import { useMountTransition } from "@/hooks/useMountTransition";
 
 type Props = {

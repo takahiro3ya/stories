@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { Global, css } from "@emotion/react";
 
+import { Button } from "./stories/UI/buttons/button/Button";
 import { Modal } from "./stories/UI/modal/Modal";
 
 import { COLORS } from "@/constants/colors";
@@ -20,7 +21,9 @@ function App() {
       <div>div 今日の天気は晴れ。降水確率は10%。明日も晴れるといいな。週末も晴れるといいな。</div>
       <p>p 今日の天気は晴れ。降水確率は10%。明日も晴れるといいな。週末も晴れるといいな。</p>
 
-      <button onClick={() => setOpen(true)}>モーダルを開く</button>
+      <Button onClick={() => setOpen(true)} priority="primary">
+        モーダルを開く
+      </Button>
       <Modal open={open} setOpen={setOpen}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
