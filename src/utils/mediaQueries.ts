@@ -1,5 +1,5 @@
 /**
- * より詳細な設定をする場合
+ * 参照
  * https://hirakublog.com/emotion-mediaqueries-function/
  */
 
@@ -32,9 +32,28 @@ const isBreakPointKeys = (value: ArgBreakpoint): value is BreakpointKeys => {
   return value in breakpoints;
 };
 
+/**
+ *
+ * minScreen('md') とすると以下の文字列が返る
+ * @media (min-width: 768px)
+ *
+ */
 export const minScreen = (breakpoint: ArgBreakpoint) => {
   const mediaQuery = isBreakPointKeys(breakpoint)
     ? `@media (min-width: ${breakpoints[breakpoint]})`
     : `@media (min-width: ${breakpoint}px)`;
+  return mediaQuery;
+};
+
+/**
+ *
+ * maxScreen('md') とすると以下の文字列が返る
+ * @media (max-width: 768px)
+ *
+ */
+export const maxScreen = (breakpoint: ArgBreakpoint) => {
+  const mediaQuery = isBreakPointKeys(breakpoint)
+    ? `@media (max-width: ${breakpoints[breakpoint]})`
+    : `@media (max-width: ${breakpoint}px)`;
   return mediaQuery;
 };

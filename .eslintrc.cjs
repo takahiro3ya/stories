@@ -10,6 +10,9 @@ module.exports = {
     "prettier", // add
   ],
   overrides: [],
+  globals: {
+    module: false, // module に対する not defined の警告を抑止
+  },
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
@@ -24,7 +27,9 @@ module.exports = {
   ],
   rules: {
     "react/react-in-jsx-scope": "off", // add
-    // "react/display-name": "off", // add
+    "react/display-name": "off", // add
+    // https://github.com/sweepline/eslint-plugin-unused-imports
+    // eslint-plugin-unused-imports の使用にともない off に設定
     "@typescript-eslint/no-unused-vars": "off", // add
     "unused-imports/no-unused-imports": "error", // add
     "react/no-unknown-property": ["error", { ignore: ["css"] }], // add - for emotion
@@ -41,7 +46,8 @@ module.exports = {
     ],
     // add
     "import/order": [
-      "error",
+      // "error",
+      "warn",
       {
         // グループの順番
         groups: [

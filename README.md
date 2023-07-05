@@ -53,6 +53,7 @@ husky
 
 - [husky](https://typicode.github.io/husky/#/)
 - [husky v6 のインストール方法と使い方。lint-staged も導入して、品質を保とう](https://fwywd.com/tech/husky-setup)
+- [husky + lint-staged を動かしたメモ@2021年7月](https://zenn.dev/seya/articles/c908d88df0a587)
 
 sanitize.css
 
