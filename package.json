@@ -11,7 +11,7 @@
     "build-storybook": "build-storybook",
     "lint": "eslint --ext .jsx,.js,.tsx,.ts src/",
     "lintfix": "npm run lint --fix",
-    "format": "prettier --write \"**/*.+(js|json|yml|ts|tsx)\"",
+    "format": "prettier --write \"**/*.+(js|jsx|cjs|json|yml|ts|tsx)\"",
     "prepare": "husky install",
     "lint-staged": "lint-staged"
   },

@@ -1,10 +1,10 @@
 import React from "react";
 import { withThemeFromJSXProvider } from "@storybook/addon-styling";
 import { Global } from "@emotion/react";
+import { create } from "@storybook/theming";
 
 import { globalStyles } from "../src/App";
-
-import { create } from "@storybook/theming";
+// import vite from "../public/vite.svg";
 
 const GlobalStyles = () => {
   return React.createElement(Global, {
@@ -46,10 +46,9 @@ export const parameters = {
     // https://storybook.js.org/docs/react/configure/theming
     theme: create({
       base: "light", // @storybook/themingのデフォルトテーマとマージするカスタムベーステーマオブジェクト。これにより、カスタムスタイルを追加できます。
-
       brandTitle: "MY STORIES",
+      // brandImage: vite, // brandTitle をロゴに置き換える
       brandUrl: "https://github.com/takahiro38k/stories",
-      // brandImage: "https://place-hold.it/350x150",
       // brandTarget: "_self", // 同じタブでリンクページを開く。
 
       colorPrimary: "#0d2d72", // プライマリーカラーを定義する文字列。
