@@ -18,6 +18,7 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
+  staticDirs: ["./public"],
 
   /**
    * tsconfig absolute paths setting

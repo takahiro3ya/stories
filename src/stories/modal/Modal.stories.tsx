@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { Modal } from "./Modal";
+import code from "./Modal.code";
 
 export default {
   component: Modal,
@@ -27,10 +28,10 @@ const Template: ComponentStory<typeof Modal> = (args) => {
 };
 
 export const Primary = Template.bind({});
-// Primary.parameters = {
-//   docs: {
-//     source: {
-//       code,
-//     },
-//   },
-// };
+Primary.parameters = {
+  docs: {
+    source: {
+      code,
+    },
+  },
+};

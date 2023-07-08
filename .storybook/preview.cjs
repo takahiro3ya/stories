@@ -4,7 +4,6 @@ import { Global } from "@emotion/react";
 import { create } from "@storybook/theming";
 
 import { globalStyles } from "../src/App";
-// import vite from "../public/vite.svg";
 
 const GlobalStyles = () => {
   return React.createElement(Global, {
@@ -26,7 +25,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  layout: "fullscreen", // コンポーネントを空白なしで表示
+  // layout: "fullscreen", // コンポーネントを空白なしで表示
   // https://github.com/storybookjs/storybook/issues/12111
   viewMode: "docs", // Docs タブを優先して表示
 
@@ -46,16 +45,17 @@ export const parameters = {
     // https://storybook.js.org/docs/react/configure/theming
     theme: create({
       base: "light", // @storybook/themingのデフォルトテーマとマージするカスタムベーステーマオブジェクト。これにより、カスタムスタイルを追加できます。
-      brandTitle: "MY STORIES",
-      // brandImage: vite, // brandTitle をロゴに置き換える
+      brandTitle: "38k Stories",
+      // .storybook/main.cjs の staticDirs で .storybook/public を有効化しているので、直下のファイルを "/logo.png" のように呼び出せる。
+      brandImage: "/logo.png", // brandTitle をロゴに置き換える
       brandUrl: "https://github.com/takahiro38k/stories",
       // brandTarget: "_self", // 同じタブでリンクページを開く。
 
-      colorPrimary: "#0d2d72", // プライマリーカラーを定義する文字列。
-      colorSecondary: "#8b500f", // セカンダリーカラーを定義する文字列。
+      colorPrimary: "#1f802c", // プライマリーカラーを定義する文字列。
+      colorSecondary: "#31589e", // セカンダリーカラーを定義する文字列。
 
       appBg: "#c0e8dd", // Storybookアプリケーションの背景色を定義する文字列。
-      barBg: "#E3D3B6", // ヘッダーバーの背景色を定義する文字列。
+      barBg: "#e9e7cd", // ヘッダーバーの背景色を定義する文字列。
       // appContentBg: "tomato", // Storybookアプリケーションのコンテンツ領域の背景色を定義する文字列。
 
       // textColor: "#473f3f", // テキストのカラーを定義する文字列。
