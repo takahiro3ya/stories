@@ -5,7 +5,7 @@ import ReactDOM from "react-dom/client";
 
 import App from "./App";
 import ErrorPage from "./ErrorPage";
-import { Tab } from "./stories/tab/Tab";
+import { Tab } from "./stories/tabs/Tab";
 Tab;
 // import "./index.css"; // inactive - global styles are applied in App.tsx
 

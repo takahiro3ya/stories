@@ -4,11 +4,10 @@ import { Button } from "./Button";
 import code from "./Button.code";
 
 export default {
-  // title: "Example/Button",
+  // サイドバーの階層設定
+  // https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy
+  // title: "",
   component: Button,
-  // argTypes: {
-  //   backgroundColor: { control: "color" },
-  // },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args}>Button</Button>;

@@ -6,6 +6,9 @@ import { Modal } from "./Modal";
 import code from "./Modal.code";
 
 export default {
+  // サイドバーの階層設定
+  // https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy
+  // title: "",
   component: Modal,
 } as ComponentMeta<typeof Modal>;
 

@@ -6,7 +6,7 @@ import { Header } from "./Header";
 import code from "./Header.code";
 
 export default {
-  title: "Example/Header",
+  title: "Examples/Samples/Header",
   component: Header,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
