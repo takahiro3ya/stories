@@ -4,6 +4,7 @@ import { MouseEvent, FC } from "react";
 import { css } from "@emotion/react";
 
 import { Fade } from "../animations/fade/Fade";
+import { Button } from "../buttons/Button";
 
 import { useMountTransition } from "@/hooks/useMountTransition";
 
@@ -35,8 +36,10 @@ export const Modal: FC<Props> = ({ children, open, setOpen, maxWidth }) => {
           <div css={styles.overlay} onClick={handleClose}>
             <div css={styles.modal(maxWidth)} onClick={handleContentClick}>
               {children}
-              <div>
-                <button onClick={handleClose}>閉じる</button>
+              <div css={styles.buttonWrapper}>
+                <Button priority="primary" onClick={handleClose}>
+                  Close
+                </Button>
               </div>
             </div>
           </div>
@@ -67,5 +70,10 @@ const styles = {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  `,
+  buttonWrapper: css`
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
   `,
 };

@@ -4,6 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { Modal } from "./Modal";
 import code from "./Modal.code";
+import { Button } from "../buttons/Button";
 
 export default {
   // サイドバーの階層設定
@@ -21,7 +22,9 @@ const Template: ComponentStory<typeof Modal> = (args) => {
 
   return (
     <>
-      <button onClick={handleOpen}>モーダルを開く</button>
+      <Button priority="primary" onClick={handleOpen}>
+        Open
+      </Button>
       <Modal {...args} open={open} setOpen={setOpen}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua.
