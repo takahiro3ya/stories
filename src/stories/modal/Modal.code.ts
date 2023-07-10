@@ -13,7 +13,7 @@ type Props = {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   /**
-   * If no set, width: 100%;
+   * If no set, width: 100%.
    */
   maxWidth?: "240px" | "360px" | "480px" | "600px";
 };

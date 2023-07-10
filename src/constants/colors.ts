@@ -4,12 +4,10 @@ type Base = {
   primary: string;
   secondary: string;
   tertiary?: string;
-  quaternary?: string;
   warning?: string;
   textPrimary?: string;
   textSecondary?: string;
   textTertiary?: string;
-  textQuaternary?: string;
   textWarning?: string;
   background?: string;
   headline?: string;
@@ -23,27 +21,24 @@ const base = (palette: Base) => {
     primary,
     secondary,
     tertiary,
-    quaternary,
     warning,
     textPrimary,
     textSecondary,
     textTertiary,
-    textQuaternary,
     textWarning,
     background,
     headline,
     paragraph,
   } = palette;
+
   return {
     primary,
     secondary,
     tertiary: tertiary ?? secondary,
-    quaternary: quaternary ?? secondary,
     warning: warning ?? "#cf222e",
     textPrimary: textPrimary ?? paragraph ?? defaultText,
     textSecondary: textSecondary ?? paragraph ?? defaultText,
     textTertiary: textTertiary ?? paragraph ?? defaultText,
-    textQuaternary: textQuaternary ?? paragraph ?? defaultText,
     textWarning: textWarning ?? paragraph ?? defaultText,
     background: background ?? "#fff",
     headline: headline ?? defaultText,
@@ -51,12 +46,14 @@ const base = (palette: Base) => {
   } as const;
 };
 
-// https://www.happyhues.co/palettes/14
-const skyYellow: Base = {
-  primary: "#ffd803",
-  secondary: "#e3f6f5",
-  tertiary: "#bae8e8",
-  quaternary: "#dbca78", // add
+const myStories: Base = {
+  primary: "#31589e",
+  secondary: "#c0e8dd",
+  tertiary: "#e9e7cd",
+  textPrimary: "white",
+  textSecondary: "#898989",
+  textTertiary: "#146eaa",
+  textWarning: "white",
   background: "#fffffe",
   headline: "#272343",
   paragraph: "#2d334a",
@@ -67,7 +64,6 @@ const skyYellow: Base = {
 //   primary: "#4C3A51",
 //   secondary: "#774360",
 //   tertiary: "#B25068",
-//   quaternary: "#E7AB79",
 // };
 
 // // https://colorhunt.co/palette/b9f3fcaee2ff93c6e7fedeff
@@ -75,10 +71,9 @@ const skyYellow: Base = {
 //   primary: "#B9F3FC",
 //   secondary: "#AEE2FF",
 //   tertiary: "#93C6E7",
-//   quaternary: "#FEDEFF",
 // };
 
-export const COLORS = base(skyYellow);
+export const COLORS = base(myStories);
 
 export const PRIORITY_CSS = {
   primary: css`
@@ -91,11 +86,7 @@ export const PRIORITY_CSS = {
   `,
   tertiary: css`
     background-color: ${COLORS.tertiary};
-    color: ${COLORS.textQuaternary};
-  `,
-  quaternary: css`
-    background-color: ${COLORS.quaternary};
-    color: ${COLORS.textQuaternary};
+    color: ${COLORS.textTertiary};
   `,
   warning: css`
     background-color: ${COLORS.warning};
