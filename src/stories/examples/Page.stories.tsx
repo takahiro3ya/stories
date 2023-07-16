@@ -7,7 +7,7 @@ import { Page } from "./Page";
 import code from "./Page.code";
 
 export default {
-  title: "Examples/Samples/Page",
+  title: "Examples/Page",
   component: Page,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout

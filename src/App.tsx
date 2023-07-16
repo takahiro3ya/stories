@@ -1,6 +1,8 @@
 import { Global, css } from "@emotion/react";
 
-import { COLORS } from "@/constants/colors";
+import { VariousTabs } from "./stories/tabs/VariousTabs";
+
+import { BASE_COLORS } from "@/constants/colors";
 import { maxScreen } from "@/utils/mediaQueries";
 import "sanitize.css";
 import "sanitize.css/forms.css";
@@ -10,10 +12,11 @@ function App() {
   return (
     <>
       <Global styles={globalStyles} />
-
-      <h1>テストヘッドライン</h1>
+      {/* <h1>テストヘッドライン</h1>
       <div>div 今日の天気は晴れ。降水確率は10%。明日も晴れるといいな。週末も晴れるといいな。</div>
-      <p>p 今日の天気は晴れ。降水確率は10%。明日も晴れるといいな。週末も晴れるといいな。</p>
+      <p>p 今日の天気は晴れ。降水確率は10%。明日も晴れるといいな。週末も晴れるといいな。</p> */}
+
+      <VariousTabs />
     </>
   );
 }
@@ -29,8 +32,8 @@ export const globalStyles = css`
 
   body {
     margin: 0;
-    background-color: ${COLORS.background};
-    color: ${COLORS.paragraph};
+    background-color: ${BASE_COLORS.background};
+    color: ${BASE_COLORS.paragraph};
     /* 2022年に最適なfont-familyの書き方 */
     /* https://ics.media/entry/200317/ */
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo,
@@ -45,12 +48,12 @@ export const globalStyles = css`
     h5,
     h6 {
       margin: 0;
-      color: ${COLORS.headline};
+      color: ${BASE_COLORS.headline};
     }
 
     p {
       margin: 0;
-      color: ${COLORS.paragraph};
+      color: ${BASE_COLORS.paragraph};
     }
 
     button {

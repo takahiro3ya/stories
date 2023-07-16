@@ -4,7 +4,7 @@
  */
 
 /**
- * 値は tailwindcss を参考
+ * 値は tailwindcss を参考。
  * @see {@link https://tailwindcss.com/docs/screens tailwindcss}
  */
 const breakpoints = {
@@ -20,7 +20,7 @@ type ArgBreakpoint = BreakpointKeys | number; // 引数の型
 
 /**
  * ユーザー定義型ガード
- * "sm" | "md" | "lg" | "xl" | "xxl" のようなユニオン型かを判定
+ * "sm" | "md" | "lg" | "xl" | "xxl" のようなユニオン型かを判定。
  *
  * Typescript "is" and "in"
  * https://qiita.com/ryo2132/items/ce9e13899e45dcfaff9b
@@ -33,10 +33,8 @@ const isBreakPointKeys = (value: ArgBreakpoint): value is BreakpointKeys => {
 };
 
 /**
- *
- * minScreen('md') とすると以下の文字列が返る
+ * minScreen('md') とすると以下の文字列を返す。
  * @media (min-width: 768px)
- *
  */
 export const minScreen = (breakpoint: ArgBreakpoint) => {
   const mediaQuery = isBreakPointKeys(breakpoint)
@@ -46,10 +44,8 @@ export const minScreen = (breakpoint: ArgBreakpoint) => {
 };
 
 /**
- *
- * maxScreen('md') とすると以下の文字列が返る
+ * maxScreen('md') とすると以下の文字列を返す。
  * @media (max-width: 768px)
- *
  */
 export const maxScreen = (breakpoint: ArgBreakpoint) => {
   const mediaQuery = isBreakPointKeys(breakpoint)

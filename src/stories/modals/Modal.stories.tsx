@@ -9,7 +9,7 @@ import { Button } from "../buttons/Button";
 export default {
   // サイドバーの階層設定
   // https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy
-  // title: "",
+  title: "Modal",
   component: Modal,
 } as ComponentMeta<typeof Modal>;
 
@@ -33,8 +33,8 @@ const Template: ComponentStory<typeof Modal> = (args) => {
   );
 };
 
-export const Primary = Template.bind({});
-Primary.parameters = {
+export const Basic = Template.bind({});
+Basic.parameters = {
   docs: {
     source: {
       code,

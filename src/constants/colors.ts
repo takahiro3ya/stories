@@ -1,5 +1,12 @@
 import { css } from "@emotion/react";
 
+export const COLORS = {
+  grayLight: "#d0d7de",
+  gray: "#9da3a8",
+  grayDark: "#55595d",
+  blackLight: "#2e3438",
+};
+
 type Base = {
   primary: string;
   secondary: string;
@@ -14,7 +21,7 @@ type Base = {
   paragraph?: string;
 };
 
-const defaultText = "#2e3438";
+const defaultText = COLORS.blackLight;
 
 const base = (palette: Base) => {
   const {
@@ -73,23 +80,23 @@ const myStories: Base = {
 //   tertiary: "#93C6E7",
 // };
 
-export const COLORS = base(myStories);
+export const BASE_COLORS = base(myStories);
 
 export const PRIORITY_CSS = {
   primary: css`
-    background-color: ${COLORS.primary};
-    color: ${COLORS.textPrimary};
+    background-color: ${BASE_COLORS.primary};
+    color: ${BASE_COLORS.textPrimary};
   `,
   secondary: css`
-    background-color: ${COLORS.secondary};
-    color: ${COLORS.textSecondary};
+    background-color: ${BASE_COLORS.secondary};
+    color: ${BASE_COLORS.textSecondary};
   `,
   tertiary: css`
-    background-color: ${COLORS.tertiary};
-    color: ${COLORS.textTertiary};
+    background-color: ${BASE_COLORS.tertiary};
+    color: ${BASE_COLORS.textTertiary};
   `,
   warning: css`
-    background-color: ${COLORS.warning};
-    color: ${COLORS.textWarning};
+    background-color: ${BASE_COLORS.warning};
+    color: ${BASE_COLORS.textWarning};
   `,
 };

@@ -6,7 +6,7 @@ import code from "./Button.code";
 export default {
   // サイドバーの階層設定
   // https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy
-  // title: "",
+  title: "Button",
   component: Button,
 } as ComponentMeta<typeof Button>;
 

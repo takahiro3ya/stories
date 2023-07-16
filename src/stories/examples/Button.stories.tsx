@@ -7,7 +7,7 @@ import code from "./Button.code";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Examples/Samples/Button",
+  title: "Examples/Button",
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
