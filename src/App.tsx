@@ -1,9 +1,12 @@
 import { Global, css } from "@emotion/react";
 
 import { VariousTabs } from "./stories/tabs/VariousTabs";
+import { TestCom1 } from "./TestCom1";
+import { TestCom2 } from "./TestCom2";
 
 import { BASE_COLORS } from "@/constants/colors";
 import { maxScreen } from "@/utils/mediaQueries";
+
 import "sanitize.css";
 import "sanitize.css/forms.css";
 import "sanitize.css/typography.css";
@@ -12,11 +15,15 @@ function App() {
   return (
     <>
       <Global styles={globalStyles} />
+
       {/* <h1>テストヘッドライン</h1>
       <div>div 今日の天気は晴れ。降水確率は10%。明日も晴れるといいな。週末も晴れるといいな。</div>
       <p>p 今日の天気は晴れ。降水確率は10%。明日も晴れるといいな。週末も晴れるといいな。</p> */}
 
       <VariousTabs />
+
+      <TestCom1 />
+      <TestCom2 />
     </>
   );
 }

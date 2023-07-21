@@ -3,6 +3,7 @@ import { ChangeEvent, Fragment, ReactNode, useState, FC } from "react";
 
 import { css } from "@emotion/react";
 
+import { StoryTag } from "@/auxiliary-components/StoryTag";
 import { COLORS } from "@/constants/colors";
 import { str3List } from "@/constants/values";
 
@@ -23,8 +24,12 @@ const contents: Contents = {
 
 export const VariousTabs = () => (
   <>
-    <Tab variant="gitHub" />
-    <Tab variant="canIUse" />
+    <StoryTag tagName="like GitHub tab">
+      <Tab variant="gitHub" />
+    </StoryTag>
+    <StoryTag tagName="like Can I use tab">
+      <Tab variant="canIUse" />
+    </StoryTag>
   </>
 );
 
