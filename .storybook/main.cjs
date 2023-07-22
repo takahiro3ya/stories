@@ -4,7 +4,8 @@ const tsconfigPaths = viteTsconfig.default; // add
 const { mergeConfig } = require("vite"); // add
 
 module.exports = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  // stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: ["../src/stories/**/*.stories.mdx", "../src/stories/**/*.stories.@(js|jsx|ts|tsx)"], // src/stories 配下のみに変更
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
