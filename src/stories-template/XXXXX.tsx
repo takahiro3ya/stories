@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 // import { FC } from "react";
 
+// import { css } from "@emotion/react";
+
 // type Props = {
 
 // };
@@ -9,7 +11,7 @@
 export const XXXXX = () => {
   return (
     <>
-      <div>XXXXX</div>);
+      <div>XXXXX</div>
     </>
   );
 };

@@ -47,6 +47,7 @@ export const globalStyles = css`
       sans-serif;
     /* sample for JP font */
     /* font-family: YuMincho, YuGothic, sans-serif; */
+    white-space: pre-wrap;
 
     h1,
     h2,
