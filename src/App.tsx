@@ -47,7 +47,7 @@ export const globalStyles = css`
       sans-serif;
     /* sample for JP font */
     /* font-family: YuMincho, YuGothic, sans-serif; */
-    white-space: pre-wrap;
+    /* white-space: pre-wrap; // ❗️❗️ body に pre-wrap をあてると storybook のトップに余計な space が発生する。 */
 
     h1,
     h2,
@@ -57,11 +57,19 @@ export const globalStyles = css`
     h6 {
       margin: 0;
       color: ${BASE_COLORS.headline};
+      white-space: pre-wrap;
     }
 
     p {
       margin: 0;
       color: ${BASE_COLORS.paragraph};
+    }
+
+    div,
+    p,
+    span,
+    li {
+      white-space: pre-wrap;
     }
 
     button {
