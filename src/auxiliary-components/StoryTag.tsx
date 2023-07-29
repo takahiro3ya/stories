@@ -21,7 +21,7 @@ export const StoryTag: FC<Props> = ({ tagName, children }) => {
 
 const styles = {
   wrapper: css`
-    margin-bottom: 24px;
+    margin-bottom: 40px;
   `,
   tag: css`
     display: inline-block;

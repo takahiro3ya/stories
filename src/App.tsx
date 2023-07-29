@@ -65,7 +65,6 @@ export const globalStyles = css`
       color: ${BASE_COLORS.paragraph};
     }
 
-    div,
     p,
     span,
     li {

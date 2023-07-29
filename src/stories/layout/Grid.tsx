@@ -91,9 +91,48 @@ export const Grid = () => {
         </div>
       </StoryTag>
 
+      <StoryTag tagName="見出しの装飾">
+        {/* styles.heading で :first-child を使っているので <div> で wrap。
+          そうしないと <StoryTag> 内の <span> が同階層なので、<span> が :first-child になってしまう。*/}
+        <div>
+          <h2 css={styles.heading}>見出し</h2>
+          <h2 css={styles.heading}>
+            どんなに見出しのテキストが長くなろうとも左右の装飾は最低限の幅を確保することができる（今回の場合は30px）
+          </h2>
+        </div>
+      </StoryTag>
+
+      <StoryTag tagName="Complex Grid">
+        <div css={styles.complexGrids}>
+          <div css={styles.complexGridA}>Alpha</div>
+          <div css={styles.complexGridB}>Beta</div>
+          <div css={styles.complexGridC}>Gamma</div>
+          <div css={styles.complexGridD}>
+            このセルの高さは
+            <br />
+            入るテキストの長さによって
+            <br />
+            変動する。
+          </div>
+        </div>
+      </StoryTag>
+
+      <StoryTag tagName="重なった四角形">
+        <div css={styles.shiftedLayer}>
+          <div>ずらした四角を重ねるレイアウト</div>
+        </div>
+      </StoryTag>
+
+      <StoryTag tagName="ページレイアウト">
+        <div css={styles.pageLayout}>
+          <header css={styles.pageHeader}>ヘッダー（中身略）</header>
+          <h1 css={styles.pageHero}>タイトル</h1>
+          <nav css={styles.pageNav}>サイドナビ</nav>
+          <main>メインコンテンツ</main>
+        </div>
+      </StoryTag>
+
       {/* <StoryTag tagName="●●●">
-        <UlNone css={styles.xxxxx}>
-        </UlNone>
       </StoryTag> */}
     </>
   );
@@ -251,7 +290,7 @@ const styles = {
   linkWithIcon: css`
     display: grid;
     /* before と after に 1fr、メイン要素に auto が適用される。
-      結果、●●● */
+      結果、content が空の before は、メインの幅が広がると消失する。 */
     grid-template-columns: 1fr auto 1fr;
     column-gap: 8px;
     align-items: center;
@@ -268,5 +307,145 @@ const styles = {
       justify-self: end;
       content: "→";
     }
+  `,
+
+  // --------------------
+  // 見出しの装飾
+
+  heading: css`
+    display: grid;
+    /* Link or Button with Icon と同様に、疑似要素の before と after にそれぞれ 1fr を適用する。 */
+    grid-template-columns: 1fr auto 1fr;
+    column-gap: 20px;
+    align-items: center;
+
+    &::before,
+    ::after {
+      content: "";
+      min-width: 30px; // border の最低幅を確保。
+      height: 4px;
+      border-top: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+    }
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+  `,
+
+  // --------------------
+  // Complex Grid
+
+  complexGrids: css`
+    display: grid;
+    /* grid-template-areas, grid-template-columns, grid-template-rows の一括指定 */
+    /* エリア名の文字数が合わないときは、スペースを入れて各列の末尾を揃えると見やすい。 */
+    grid-template:
+      "Alpha  Beta  Beta" 60px
+      "Alpha     . Gamma" 100px // 何も要素が入らないエリアは "." を入れる。
+      "Alpha Delta Gamma" auto /
+      40% 80px 1fr;
+    gap: 4px;
+
+    & div {
+      padding: 16px;
+    }
+  `,
+  complexGridA: css`
+    /* grid-template でつけた名前を指定することで、grid-template の該当箇所にあてがわれる。 */
+    /* ❗️❗️ ただし、スクリーンリーダーなどを考慮し、できるだけ HTML の並びから逸脱しないこと。 */
+    grid-area: Alpha;
+    background-color: lightcyan;
+  `,
+  complexGridB: css`
+    grid-area: Beta;
+    background-color: lavender;
+  `,
+  complexGridC: css`
+    grid-area: Gamma;
+    background-color: bisque;
+  `,
+  complexGridD: css`
+    grid-area: Delta;
+    background-color: mistyrose;
+  `,
+
+  // --------------------
+  // 重なった四角形
+
+  shiftedLayer: css`
+    display: grid;
+    /* 行列それぞれ指定することで、3 * 3 = 9 のエリアを作成。 */
+    grid-template-rows: 10px auto 10px;
+    grid-template-columns: 10px auto 10px;
+    /* わかりやすさを優先する場合、以下の書き方もできる
+      grid-template:
+      '. . .' 10px
+      '. . .' auto
+      '. . .' 10px /
+      10px auto 10px;
+     */
+
+    & > div {
+      /* 数字で指定した場合は grid-row-start, grid-column-start, grid-row-end, grid-column-end の一括指定。 */
+      /* 「1行目・1列目から始めて、2行分・2列分使って配置」の意。 */
+      /* イメージが湧きにくい場合は下記を参照。 */
+      /* https://zenn.dev/kagan/articles/4f96a97aadfcb8#9.-%E8%A6%81%E7%B4%A0%E3%82%92%E9%87%8D%E3%81%AD%E3%82%8B%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88 */
+      grid-area: 1 / 1 / span 2 / span 2;
+      padding: 16px;
+      background-color: #7c7258;
+      color: white;
+    }
+    &::before {
+      grid-area: 2 / 2 / span 2 / span 2;
+      content: "";
+      background-color: #ffc800;
+    }
+  `,
+
+  // --------------------
+  // ページレイアウト
+
+  pageLayout: css`
+    display: grid;
+    // auto は要素の高さにフィット。残りの高さが 1fr で埋まる（min-height が 100vh なので、少なくとも画面分の高さが埋まる）。
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 1fr 15%;
+    /* わかりやすさを優先する場合、以下の書き方もできる
+      grid-template:
+      '. .' auto
+      '. .' auto
+      '. .' 1fr /
+      1fr 15%;
+     */
+    column-gap: 5%;
+    min-height: 100vh;
+    background-color: #263131;
+    color: white;
+
+    & main {
+      padding: 16px;
+    }
+  `,
+  pageHeader: css`
+    /* grid-row-start, grid-column-start, grid-row-end, grid-column-end の一括指定。*/
+    /* 「1行目・1列目から始めて、行（高さ）は要素にあわせて・2列分使って配置」 */
+    /* 図でのイメージは下記を参照。 */
+    /* https://zenn.dev/kagan/articles/4f96a97aadfcb8#10.-%E3%83%9A%E3%83%BC%E3%82%B8%E5%85%A8%E4%BD%93%E3%81%AE%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88 */
+    grid-area: 1 / 1 / auto / span 2;
+    background-color: #4d9494;
+    padding: 16px;
+  `,
+  pageHero: css`
+    grid-area: 2 / 1 / auto / span 2;
+    padding: 24px 15% 24px 16px;
+    background-color: #2a6969;
+    color: white;
+  `,
+  pageNav: css`
+    /* pageHeader と要素の一部が重ねる。 */
+    grid-area: 2 / 2 / span 2;
+    margin-top: 40px;
+    padding: 16px;
+    background-color: #0f4848;
   `,
 };
