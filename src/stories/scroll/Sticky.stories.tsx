@@ -1,16 +1,16 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { Grid } from "./Grid";
-import code from "./Grid.code";
+import { Sticky } from "./Sticky";
+import code from "./Sticky.code";
 
 export default {
   // サイドバーの階層設定
   // https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy
-  // title: "Grid",
-  component: Grid,
-} as ComponentMeta<typeof Grid>;
+  // title: "Sticky",
+  component: Sticky,
+} as ComponentMeta<typeof Sticky>;
 
-const Template: ComponentStory<typeof Grid> = () => <Grid />;
+const Template: ComponentStory<typeof Sticky> = () => <Sticky />;
 
 export const Basic = Template.bind({});
 // Basic.args = {};
@@ -21,3 +21,4 @@ Basic.parameters = {
     },
   },
 };
+scroll;

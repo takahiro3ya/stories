@@ -128,7 +128,7 @@ export const Grid = () => {
           <header css={styles.pageHeader}>ヘッダー（中身略）</header>
           <h1 css={styles.pageHero}>タイトル</h1>
           <nav css={styles.pageNav}>サイドナビ</nav>
-          <main>メインコンテンツ</main>
+          <main>メインコンテンツ（ヘッダーとタイトルも含んだ全体の高さは 100svh）</main>
         </div>
       </StoryTag>
 
@@ -418,7 +418,7 @@ const styles = {
       1fr 15%;
      */
     column-gap: 5%;
-    min-height: 100vh;
+    min-height: 100svh;
     background-color: #263131;
     color: white;
 

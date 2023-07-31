@@ -1,5 +1,6 @@
 import React from "react";
 import { withThemeFromJSXProvider } from "@storybook/addon-styling";
+
 import { Global } from "@emotion/react";
 import { create } from "@storybook/theming";
 
@@ -41,6 +42,13 @@ export const parameters = {
   // },
 
   options: {
+    // ❓❓ サイドバーのカテゴリーの並び替えができるはずだが、なぜか効かない。
+    // https://storybook.js.org/docs/6.5/react/writing-stories/naming-components-and-hierarchy#sorting-stories
+    storySort: {
+      // order: ["Scroll", "Sticky", "Grid", "*", "Examples"],
+      order: ["*", "Examples"],
+    },
+
     // 参照
     // https://storybook.js.org/docs/react/configure/theming
     theme: create({
