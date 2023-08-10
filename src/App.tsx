@@ -1,5 +1,6 @@
 import { Global, css } from "@emotion/react";
 
+import { Pentagon } from "./stories/graph/Pentagon";
 import { VariousTabs } from "./stories/tabs/VariousTabs";
 import { TestCom1 } from "./TestCom1";
 import { TestCom2 } from "./TestCom2";
@@ -24,6 +25,14 @@ function App() {
 
       <TestCom1 />
       <TestCom2 />
+
+      <Pentagon
+        // fullWidth
+        chartData={[
+          { val: [2.8, 1.5, 3.9, 0.8, 3.4], color: "primary" },
+          { val: [2.8, 4.5, 1.9, 1.8, 1.4], color: "secondary" },
+        ]}
+      />
     </>
   );
 }

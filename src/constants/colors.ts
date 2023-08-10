@@ -20,7 +20,7 @@ const myStories: Base = {
   background: "#fffffe",
   headline: "#2e2a4b",
   paragraph: "#41434f",
-};
+} as const;
 
 // // https://colorhunt.co/palette/4c3a51774360b25068e7ab79
 // const warm: Base = {

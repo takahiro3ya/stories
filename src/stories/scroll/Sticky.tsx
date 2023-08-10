@@ -1,37 +1,44 @@
 /** @jsxImportSource @emotion/react */
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 
 import { css } from "@emotion/react";
 
 import { StoryTag, WarningMsg } from "@/auxiliary-components";
 
 export const Sticky = () => {
-  const targetClasses = ["scrollWrapper", "stickyScrollbar"];
+  const targetIds = ["scrollWrapperId", "stickyScrollbarId"];
+
+  const listener = useCallback((e: Event) => {
+    const { id: targetId, scrollLeft } = e.target as HTMLDivElement;
+    const anotherEl = document.getElementById(targetIds.find((id) => id !== targetId) ?? "");
+
+    if (anotherEl) {
+      anotherEl.scrollTo(scrollLeft, 0);
+    }
+
+    // 同期がずれていないかのチェック用。
+    // const anotherLeft = anotherEl?.scrollLeft;
+    // console.log(scrollLeft, anotherLeft);
+  }, []);
 
   // scrollbar with sticky
   useEffect(() => {
-    const contentDoc = document.querySelector(`.${targetClasses[0]}`);
-    const barDoc = document.querySelector(`.${targetClasses[1]}`);
+    const contentDoc = document.getElementById(targetIds[0]);
+    const barDoc = document.getElementById(targetIds[1]);
 
     if (contentDoc && barDoc) {
       // コンテンツがタッチパッドやフリックによってスクロールしたら、分離したスクロールバーの方も同期してスクロールさせる。
-      contentDoc.addEventListener("scroll", function () {
-        const contentLeft = contentDoc.scrollLeft;
-        barDoc.scrollTo(contentLeft, 0);
-
-        // const barLeft = barDoc.scrollLeft;
-        // console.log(contentLeft, barLeft); // 同期がずれていないかのチェック用。
-      });
-
+      contentDoc.addEventListener("scroll", listener);
       // 分離したスクロールバーがスクロールしたら、コンテンツの方も同期してスクロールさせる。
-      barDoc.addEventListener("scroll", function () {
-        const barLeft = barDoc.scrollLeft;
-        contentDoc.scrollTo(barLeft, 0);
-
-        // const contentLeft = contentDoc.scrollLeft;
-        // console.log(barLeft, contentLeft); // 同期がずれていないかのチェック用。
-      });
+      barDoc.addEventListener("scroll", listener);
     }
+
+    return () => {
+      if (contentDoc && barDoc) {
+        contentDoc.removeEventListener("scroll", listener);
+        barDoc.removeEventListener("scroll", listener);
+      }
+    };
   }, []);
 
   return (
@@ -50,7 +57,7 @@ export const Sticky = () => {
       {/* https://dev.classmethod.jp/articles/css_scrollbar_adjustment/ */}
       <StoryTag tagName="scrollbar with sticky">
         <div>
-          <div css={styles.scrollWrapper} className={targetClasses[0]}>
+          <div css={styles.scrollWrapper} id={targetIds[0]}>
             <p css={styles.scrollContent}>
               ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
               <br />
@@ -60,7 +67,7 @@ export const Sticky = () => {
           </div>
 
           {/* 複製する横スクロールバー */}
-          <div css={styles.stickyScrollbar} className={targetClasses[1]}>
+          <div css={styles.stickyScrollbar} id={targetIds[1]}>
             <div css={styles.scrollInner}></div>
           </div>
         </div>
