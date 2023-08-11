@@ -6,6 +6,31 @@ import { css } from "@emotion/react";
 
 import { StoryTag, WarningMsg } from "@/auxiliary-components";
 
+const alphabets = [..."abcdefghijklmnopqrstuvwxyz"];
+const tableRowList: { name: string; val: number }[] = [
+  { name: "Anna", val: 0 },
+  { name: "James", val: 10 },
+  { name: "Jennifer", val: 20 },
+  { name: "Jeremiah", val: 30 },
+  { name: "Jocelyn", val: 40 },
+  { name: "Benjamin", val: 50 },
+  { name: "Zed", val: 60 },
+  { name: "Frank", val: 70 },
+  { name: "Chris", val: 80 },
+  { name: "Sarah", val: 90 },
+  { name: "Rob", val: 100 },
+  { name: "Danielle", val: 110 },
+  { name: "Mike", val: 120 },
+  { name: "Miranda", val: 130 },
+  { name: "John", val: 140 },
+  { name: "Ben", val: 150 },
+  { name: "Dick", val: 160 },
+  { name: "Becky", val: 170 },
+  { name: "Judy", val: 180 },
+  { name: "Kate", val: 190 },
+  { name: "Ora", val: 200 },
+];
+
 export const Sticky = () => {
   const targetIds = ["scrollWrapperId", "stickyScrollbarId"];
 
@@ -73,6 +98,32 @@ export const Sticky = () => {
           </div>
         </div>
       </StoryTag>
+
+      <StoryTag tagName="table with sticky">
+        <div css={styles.tableWrapper}>
+          <table>
+            <thead>
+              <tr>
+                <th>Member</th>
+                {alphabets.map((chr) => (
+                  <th key={chr}>{chr.toUpperCase()}</th>
+                ))}
+              </tr>
+            </thead>
+
+            <tbody>
+              {tableRowList.map(({ name, val }) => (
+                <tr key={name}>
+                  <td>{name}</td>
+                  {[...Array(26).keys()].map((el) => (
+                    <td key={el}>{val}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </StoryTag>
     </>
   );
 };
@@ -100,7 +151,7 @@ const styles = {
   header: css\`
     height: 50px;
     border-color: red;
-    position: -webkit-sticky;
+    position: -webkit-sticky; /* Safari 12.1 以前 */
     position: sticky;
     top: 0;
   \`,
@@ -138,13 +189,54 @@ const styles = {
     background-color: #ceeff3;
     overflow-x: auto;
     overflow-y: hidden;
-    position: -webkit-sticky;
+    position: -webkit-sticky; /* Safari 12.1 以前 */
     position: sticky;
     bottom: 0;
   \`,
   scrollInner: css\`
     height: 1px;
     width: 600px; // scrollContent とそろえる。
+  \`,
+
+  // --------------------
+  // table with sticky
+
+  tableWrapper: css\`
+    /* width: 200px; */
+    /* overflow-x: auto; ❗️❗️ 親要素や祖先要素に overflow が設定されていると sticky は効かないので要注意。 */
+
+    & td,
+    th {
+      white-space: nowrap;
+      padding: 8px 16px;
+      text-align: center;
+    }
+
+    & th {
+      position: -webkit-sticky; /* Safari 12.1 以前 */
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background-color: #ddffbf;
+
+      &:first-of-type {
+        left: 0;
+        z-index: 2;
+      }
+    }
+
+    & td {
+      border-bottom: 1px solid #addd83;
+
+      /* 行の先頭セルを sticky で固定 */
+      &:first-of-type {
+        background-color: #f4f4f4;
+        position: -webkit-sticky; /* Safari 12.1 以前 */
+        position: sticky;
+        left: 0;
+        text-align: left;
+      }
+    }
   \`,
 };
 `;
