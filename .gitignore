@@ -25,3 +25,6 @@ dist-ssr
 
 READMEforMe.md
 storybook-static
+
+# nodenv
+.node-version

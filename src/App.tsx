@@ -1,6 +1,6 @@
 import { Global, css } from "@emotion/react";
 
-import { Pentagon } from "./stories/graph/Pentagon";
+import { Pentagon } from "./stories/graphs/Pentagon";
 import { VariousTabs } from "./stories/tabs/VariousTabs";
 import { TestCom1 } from "./TestCom1";
 import { TestCom2 } from "./TestCom2";
