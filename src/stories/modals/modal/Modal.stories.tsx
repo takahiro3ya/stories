@@ -4,12 +4,13 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { Modal } from "./Modal";
 import code from "./Modal.code";
-import { Button } from "../buttons/Button";
+
+import { Button } from "@/stories/buttons/Button";
 
 export default {
   // サイドバーの階層設定
   // https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy
-  title: "Modal",
+  title: "modal/Modal",
   component: Modal,
 } as ComponentMeta<typeof Modal>;
 

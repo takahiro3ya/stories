@@ -6,7 +6,7 @@ import code from "./Sticky.code";
 export default {
   // サイドバーの階層設定
   // https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy
-  // title: "Sticky",
+  title: "scroll/Sticky",
   component: Sticky,
 } as ComponentMeta<typeof Sticky>;
 

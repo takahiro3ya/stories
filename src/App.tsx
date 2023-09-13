@@ -1,7 +1,7 @@
 import { Global, css } from "@emotion/react";
 
-import { Pentagon } from "./stories/graphs/Pentagon";
-import { VariousTabs } from "./stories/tabs/VariousTabs";
+import { Pentagon } from "./stories/graphs/pentagon/Pentagon";
+import { VariousTabs } from "./stories/tabs/various-tabs/VariousTabs";
 import { TestCom1 } from "./TestCom1";
 import { TestCom2 } from "./TestCom2";
 
