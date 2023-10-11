@@ -44,7 +44,6 @@ function App() {
             title="ここにテキストが入ります。"
             body={`ここにテキストが入ります。\nここにテキストが入ります。\nここにテキストが入ります。`}
             width={300}
-            // positions={{ top: 30, right: -60 }} // top 30 = 20（? icon の高さ） + 10（ballon の矢印の高さ）
           />
         </div>
         <div style={{ width: 500, backgroundColor: "skyblue" }}></div>
@@ -54,7 +53,7 @@ function App() {
             title="ここにテキストが入ります。"
             body={`ここにテキストが入ります。\nここにテキストが入ります。\nここにテキストが入ります。`}
             width={200}
-            positions={{ right: -20 }} // top 30 = 20（? icon の高さ） + 10（ballon の矢印の高さ）
+            positions={{ right: -20 }}
           />
         </div>
       </div>

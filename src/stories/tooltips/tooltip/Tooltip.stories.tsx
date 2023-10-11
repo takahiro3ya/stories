@@ -11,11 +11,21 @@ export default {
 } as ComponentMeta<typeof Tooltip>;
 
 const Template: ComponentStory<typeof Tooltip> = () => (
-  <Tooltip
-    balloonId="balloon"
-    title="ここにテキストが入ります。"
-    body={`ここにテキストが入ります。\nここにテキストが入ります。\nここにテキストが入ります。`}
-  />
+  <div style={{ display: "flex" }}>
+    <Tooltip
+      balloonId="balloon_1"
+      title="バルーン1"
+      body={`ここにテキストが入ります。\nここにテキストが入ります。\nここにテキストが入ります。`}
+    />
+    <div style={{ width: 200 }}></div>
+    <Tooltip
+      balloonId="balloon_2"
+      title="バルーン2"
+      body={`ここにテキストが入ります。\nここにテキストが入ります。\nここにテキストが入ります。`}
+      width={100}
+      positions={{ right: -20 }}
+    />
+  </div>
 );
 
 export const Basic = Template.bind({});

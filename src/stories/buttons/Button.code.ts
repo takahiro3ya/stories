@@ -47,13 +47,14 @@ const styles = {
     padding: 0 8px;
     min-width: 100px;
     min-height: 40px;
+    font-size: 14px;
     font-weight: bold;
     border-radius: 50px;
   \`,
   sm: css\`
     min-width: 80px;
     min-height: 32px;
-    font-size: 14px;
+    font-size: 12px;
   \`,
   md: css\`\`,
   lg: css\`
