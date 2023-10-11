@@ -2,18 +2,7 @@
  * 参照
  * https://hirakublog.com/emotion-mediaqueries-function/
  */
-
-/**
- * 値は tailwindcss を参考。
- * @see {@link https://tailwindcss.com/docs/screens tailwindcss}
- */
-const breakpoints = {
-  sm: "640px",
-  md: "768px",
-  lg: "1024px",
-  xl: "1280px",
-  xxl: "1536px",
-} as const;
+import { breakpoints } from "@/constants/values";
 
 type BreakpointKeys = keyof typeof breakpoints;
 type ArgBreakpoint = BreakpointKeys | number; // 引数の型

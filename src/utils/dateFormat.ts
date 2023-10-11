@@ -4,6 +4,11 @@ type FormatOptions = {
   hasTime?: boolean;
 };
 
+// Date 型の値を受け取り、指定されたフォーマットで文字列に変換する
+// 例:
+// format: slash -> 2021/03/09
+// format: hyphen -> 2021-03-09
+// format: ISO -> 2021-03-09T15:07:01.263Z
 export const formatWithTimezone = (
   date: Date,
   { format, has0, hasTime }: FormatOptions = {

@@ -5,6 +5,7 @@ export const COLORS = {
   gray: "#9da3a8",
   grayDark: "#55595d",
   blackLight: "#2e3438",
+  blueLight: "#e6f0f6",
 };
 
 const defaultText = COLORS.blackLight;

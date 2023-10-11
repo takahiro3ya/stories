@@ -4,10 +4,9 @@ import { MouseEvent, FC } from "react";
 
 import { css } from "@emotion/react";
 
-import { Fade } from "../animations/fade/Fade";
-import { Button } from "../buttons/Button";
-
 import { useMountTransition } from "@/hooks/useMountTransition";
+import { Fade } from "@/stories/animations/fade/Fade";
+import { Button } from "@/stories/buttons/Button";
 
 type Props = {
   children: React.ReactNode;

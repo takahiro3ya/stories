@@ -2,6 +2,7 @@ import { Global, css } from "@emotion/react";
 
 import { Pentagon } from "./stories/graphs/pentagon/Pentagon";
 import { VariousTabs } from "./stories/tabs/various-tabs/VariousTabs";
+import { Tooltip } from "./stories/tooltips/tooltip/Tooltip";
 import { TestCom1 } from "./TestCom1";
 import { TestCom2 } from "./TestCom2";
 
@@ -25,6 +26,38 @@ function App() {
 
       <TestCom1 />
       <TestCom2 />
+
+      <div>
+        <Tooltip
+          balloonId="balloon_1"
+          title="ここにテキストが入ります。"
+          body={`ここにテキストが入ります。\nここにテキストが入ります。\nここにテキストが入ります。`}
+          width={500}
+          // positions={{ top: 30, right: -60 }} // top 30 = 20（? icon の高さ） + 10（ballon の矢印の高さ）
+        />
+      </div>
+
+      <div style={{ display: "flex" }}>
+        <div>
+          <Tooltip
+            balloonId="balloon_2"
+            title="ここにテキストが入ります。"
+            body={`ここにテキストが入ります。\nここにテキストが入ります。\nここにテキストが入ります。`}
+            width={300}
+            // positions={{ top: 30, right: -60 }} // top 30 = 20（? icon の高さ） + 10（ballon の矢印の高さ）
+          />
+        </div>
+        <div style={{ width: 500, backgroundColor: "skyblue" }}></div>
+        <div>
+          <Tooltip
+            balloonId="balloon_3"
+            title="ここにテキストが入ります。"
+            body={`ここにテキストが入ります。\nここにテキストが入ります。\nここにテキストが入ります。`}
+            width={200}
+            positions={{ right: -20 }} // top 30 = 20（? icon の高さ） + 10（ballon の矢印の高さ）
+          />
+        </div>
+      </div>
 
       <Pentagon
         // fullWidth

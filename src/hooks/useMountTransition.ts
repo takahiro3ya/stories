@@ -1,10 +1,12 @@
-/**
- * How to Animate Mounting Content in React
- * https://letsbuildui.dev/articles/how-to-animate-mounting-content-in-react
- */
 import { useEffect, useState } from "react";
 
 import { TRANSITION_MS } from "@/constants/values";
+
+/**
+ * 参照
+ * How to Animate Mounting Content in React
+ * https://letsbuildui.dev/articles/how-to-animate-mounting-content-in-react
+ */
 
 /**
  * Usage in component
