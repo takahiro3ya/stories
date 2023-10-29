@@ -1,5 +1,6 @@
 import { Global, css } from "@emotion/react";
 
+import { SwitchButton } from "./stories/buttons/switchButton/SwitchButton";
 import { Pentagon } from "./stories/graphs/pentagon/Pentagon";
 import { VariousTabs } from "./stories/tabs/various-tabs/VariousTabs";
 import { Tooltip } from "./stories/tooltips/tooltip/Tooltip";
@@ -65,6 +66,8 @@ function App() {
           { val: [2.8, 4.5, 1.9, 1.8, 1.4], color: "secondary" },
         ]}
       />
+
+      <SwitchButton input={{ onChange: () => console.log("onChange!") }} />
     </>
   );
 }

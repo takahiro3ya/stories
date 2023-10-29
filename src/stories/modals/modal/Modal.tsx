@@ -5,7 +5,7 @@ import { css } from "@emotion/react";
 
 import { useMountTransition } from "@/hooks/useMountTransition";
 import { Fade } from "@/stories/animations/fade/Fade";
-import { Button } from "@/stories/buttons/Button";
+import { Button } from "@/stories/buttons/button/Button";
 
 type Props = {
   children: React.ReactNode;

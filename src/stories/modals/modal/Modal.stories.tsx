@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Modal } from "./Modal";
 import code from "./Modal.code";
 
-import { Button } from "@/stories/buttons/Button";
+import { Button } from "@/stories/buttons/button/Button";
 
 export default {
   // サイドバーの階層設定

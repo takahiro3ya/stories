@@ -7,7 +7,7 @@ import { css } from "@emotion/react";
 import { COLORS } from "@/constants/colors";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import tooltipSvg from "@/stories/assets/tooltip.svg";
-import { Button } from "@/stories/buttons/Button";
+import { Button } from "@/stories/buttons/button/Button";
 
 type Props = {
   balloonId: string;
