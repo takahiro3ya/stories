@@ -6,7 +6,7 @@ import code from "./Grid.code";
 export default {
   // サイドバーの階層設定
   // https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy
-  title: "layout/Grid",
+  title: "layouts/Grid",
   component: Grid,
 } as ComponentMeta<typeof Grid>;
 

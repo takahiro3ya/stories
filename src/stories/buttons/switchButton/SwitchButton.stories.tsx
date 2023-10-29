@@ -6,7 +6,7 @@ import code from "./SwitchButton.code";
 export default {
   // サイドバーの階層設定
   // https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy
-  title: "button/SwitchButton",
+  title: "buttons/SwitchButton",
   component: SwitchButton,
 } as ComponentMeta<typeof SwitchButton>;
 

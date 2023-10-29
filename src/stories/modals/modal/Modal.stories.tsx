@@ -10,7 +10,7 @@ import { Button } from "@/stories/buttons/button/Button";
 export default {
   // サイドバーの階層設定
   // https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy
-  title: "modal/Modal",
+  title: "modals/Modal",
   component: Modal,
 } as ComponentMeta<typeof Modal>;
 
